@@ -54,7 +54,6 @@ export default createBottomTabNavigator({
   Chat: { screen: HomeScreen },
   Mapa: { screen: MapScreen },
   Config: { screen: SettingsScreen },
-  
 },
 {
   navigationOptions: ({ navigation }) => ({
