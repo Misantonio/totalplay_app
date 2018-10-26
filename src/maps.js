@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Dimensions } from 'react-native';
 import MapView, { PROVIDER_DEFAULT, Marker } from 'react-native-maps';
 
 
 const coords = [[19.357633, -99.273455], [19.361445, -99.278597], [19.365305, -99.264662], [19.417342, -99.148454]];
-
+const width = Dimensions.get('window').width;
 
 export default class MyMap extends Component {
     constructor(props) {
@@ -67,7 +67,8 @@ export default class MyMap extends Component {
         return (
             <View style={styles.container} >
                 <MapView
-                    style={styles.map}
+                    style={[styles.map, { width: this.state.width }]}
+                    onMapReady={() => this.setState({ width: width - 1 })}
                     provider={PROVIDER_DEFAULT}
                     initialRegion={this.state.mapRegion}
                     showsUserLocation={true}
