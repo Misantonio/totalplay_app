@@ -173,7 +173,7 @@ export default class Chat extends Component {
         if(this.state.isLoading){
             return(
                 <View style={{flex: 1, padding: 20}}>
-                    <ActivityIndicator style={{flex: 1, justifyContent: 'center', justifyContent: 'space-around'}} size={70}/>
+                    <ActivityIndicator style={{flex: 1, justifyContent: 'center', justifyContent: 'space-around'}} size={'large'}/>
                 </View>
             )
         }
