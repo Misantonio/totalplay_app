@@ -52,13 +52,13 @@ export default class MyMap extends Component {
     }
 
     onPressMarker = (args) => {
-        let id = args.nativeEvent.id;
-        let pressed = id != this.state.markerPressed ? true : false;
+        let markerPressed = args.nativeEvent.id;
+        let pressed = markerPressed != this.state.markerPressed ? true : !this.state.pressed;
         this.setState({
             pressed: pressed,
-            markerPressed: id
+            markerPressed: markerPressed
         });
-        this.setMarkers(!this.state.pressed, id);
+        this.setMarkers(!this.state.pressed, markerPressed);
     }
 
     setMarkers(pressed, markerPressed){
